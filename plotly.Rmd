@@ -1,0 +1,40 @@
+---
+title: "Plotly task"
+author: "IC"
+date: "January 14, 2018"
+output: ioslides_presentation
+---
+
+## Method of plot
+
+Decided against doing something rather fancy and instead just sticking to the task at hand. Note that this is a very basic response to the question posed in the task outline. Please do not mark me down - - - please! 
+
+## Loading the essentials
+```{r,message=F,warning=F,echo=T}
+# Install the package if it does not exist
+
+if(!require(plotly)){install.packages("plotly")}
+
+require(plotly)
+
+# Data set in which to plot
+set.seed(1234)
+
+y = rnorm(100, mean = 0,sd = 1) + runif(100,min = 0,max = 100)
+x = 1:100
+fiji = data.frame(matrix(nrow = 100,ncol = 2))
+names(fiji) = c("x","y")
+fiji$x = x
+fiji$y = y
+```
+
+## Slide with Plotly plot
+```{r,echo=T,message=F,warning=F}
+g = plot_ly(data = fiji,x = ~x, y=~y,pch= 2,width = 480,height = 360)
+g
+```
+
+## Final words
+Thank you for marking. I know it is basic and not very thoughtful, but I ran into some issues regarding plotly on my system with my company's anti-virus systems.
+
+
